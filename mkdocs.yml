@@ -1,16 +1,39 @@
-site_name: Beginning Python for C++ Developers
+site_name: C++程序员的Python入门
 site_url: http://python.hackerphysics.com
 
 theme:
-    name: mkdocs
+    name: material
     font:
       text: Roboto
       code: Roboto Mono
     features:
       - navigation.expand
+      - navigation.top
       - navigation.tabs
       - search.suggest
       - toc.integrate
-
+      - content.code.annotate
 nav:
-    - Home: index.md
+    - '前言': 'index.md'
+    - '编程语言漫谈': '0-programming-languages.md'
+    - '基础知识': '1-python-fundamentals.md'
+    - '函数': '2-python-function.md'
+    - '类':  '3-python-class.md'
+    - '模块': '4-python-module.md'
+
+markdown_extensions:
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
