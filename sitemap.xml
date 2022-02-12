@@ -6,7 +6,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://python.hackerphysics.com/function/</loc>
+         <loc>http://python.hackerphysics.com/0-programming-languages/</loc>
+         <lastmod>2022-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://python.hackerphysics.com/1-python-fundamentals/</loc>
+         <lastmod>2022-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://python.hackerphysics.com/2-python-function/</loc>
+         <lastmod>2022-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://python.hackerphysics.com/3-python-class/</loc>
+         <lastmod>2022-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://python.hackerphysics.com/4-python-module/</loc>
          <lastmod>2022-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
