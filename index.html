@@ -10,7 +10,7 @@
       
         <link rel="canonical" href="http://python.hackerphysics.com/">
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="images/python.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
     
     
@@ -76,8 +76,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="." title="C++程序员的Python入门" class="md-header__button md-logo" aria-label="C++程序员的Python入门" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="images/python.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -172,18 +171,6 @@
 
 
   <li class="md-tabs__item">
-    <a href="0-programming-languages/" class="md-tabs__link">
-      编程语言漫谈
-    </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
     <a href="1-python-fundamentals/" class="md-tabs__link">
       基础知识
     </a>
@@ -226,6 +213,18 @@
   </li>
 
       
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="5-python-applications/" class="md-tabs__link">
+      实战
+    </a>
+  </li>
+
+      
     </ul>
   </div>
 </nav>
@@ -251,8 +250,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="." title="C++程序员的Python入门" class="md-nav__button md-logo" aria-label="C++程序员的Python入门" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="images/python.png" alt="logo">
 
     </a>
     C++程序员的Python入门
@@ -306,7 +304,7 @@
       
         <li class="md-nav__item">
   <a href="#python_1" class="md-nav__link">
-    为什么要有Python？
+    Python的诞生
   </a>
   
 </li>
@@ -318,25 +316,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="0-programming-languages/" class="md-nav__link">
-        编程语言漫谈
-      </a>
     </li>
   
 
@@ -401,6 +391,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="5-python-applications/" class="md-nav__link">
+        实战
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -416,22 +421,24 @@
 
   <h1>前言</h1>
 
+<p>本教程写给具有C++编程经验的程序员，希望能帮助更好地学习和理解Python。</p>
 <h2 id="python">关于Python</h2>
 <blockquote>
-<p>Python 是一种极少数能声言兼具<strong>简单</strong>与<strong>功能强大</strong>的编程语言。你将惊异于发现你正在使用的这门编程语言是如此简单，它专注于如何解决问题，而非拘泥于语法与结构。 —— 《简明Python教程》</p>
+<p>Python 是一种极少数能兼具<strong>简单</strong>与<strong>功能强大</strong>的编程语言。你将惊异于发现你正在使用的这门编程语言是如此简单，它专注于如何解决问题，而非拘泥于语法与结构。 —— 《简明Python教程》</p>
 </blockquote>
 <p>官方对 Python 的介绍如下：</p>
 <blockquote>
 <p>Python 是一款<strong>易于学习</strong>且功能强大的编程语言。 它具有高效率的数据结构，能够简单又有效地实现面向对象编程。Python 简洁的语法与动态输入之特性，加之其解释性语言的本质，使得它成为一种在<strong>多种领域</strong>与<strong>绝大多数平台</strong>都能进行脚本编写与应用<strong>快速开发</strong>工作的理想语言。</p>
 </blockquote>
-<h2 id="python_1">为什么要有Python？</h2>
+<h2 id="python_1">Python的诞生</h2>
 <blockquote>
 <p>1989年圣诞节期间，在阿姆斯特丹，Guido为了打发圣诞节的无趣，决心开发一个新的脚本解释程序，作为ABC语言的一种继承。之所以选中Python（大蟒蛇的意思）作为该编程语言的名字，是取自英国20世纪70年代首播的电视喜剧《蒙提·派森的飞行马戏团》（Monty Python's Flying Circus）。
 ABC是由Guido参加设计的一种教学语言。就Guido本人看来，<strong>ABC这种语言非常优美和强大，是专门为非专业程序员设计的</strong>。但是ABC语言并没有成功，究其原因，Guido认为是其非开放造成的。Guido决心在Python中避免这一错误。同时，他还想实现在ABC中闪现过但未曾实现的东西。</p>
 </blockquote>
-<p>可以看出Guido在创造Python语言的时候就考虑了为非专业程序员设计，因此简单易用是Python的基因。</p>
+<p>可以看出Guido在创造Python语言的时候就考虑了为非专业程序员设计，Python如此简单易用也就不奇怪了。</p>
 <p><img alt="20220125165843" src="http://haipeng-openwrite.oss-cn-beijing.aliyuncs.com/images%5C6533702ef8bac19c23bf3a083d9fe9c9.png" /></p>
 <h2 id="python_2">Python的应用领域</h2>
+<p>Python的应用领域非常广泛，无论从哪个角度看，Python都是开发者非常值得学习的一门语言。</p>
 <ul>
 <li>AI and machine learning.</li>
 <li>Data analytics.</li>
@@ -443,7 +450,12 @@ ABC是由Guido参加设计的一种教学语言。就Guido本人看来，<strong
 <li>Finance.</li>
 <li>...</li>
 </ul>
-<p>Python的应用领域非常广泛，无论从哪个角度看，Python都是开发者非常值得学习的一门语言。</p>
+<h2 id="_1">参考资料</h2>
+<ul>
+<li><a href="https://www.runoob.com/python/python-tutorial.html">《Python 基础教程》</a></li>
+<li><a href="https://python.swaroopch.com/">《A Byte of Python》</a></li>
+<li>《Functional Programming in Python》</li>
+</ul>
 
               
             </article>
@@ -463,13 +475,13 @@ ABC是由Guido参加设计的一种教学语言。就Guido本人看来，<strong
       
       
         
-        <a href="0-programming-languages/" class="md-footer__link md-footer__link--next" aria-label="Next: 编程语言漫谈" rel="next">
+        <a href="1-python-fundamentals/" class="md-footer__link md-footer__link--next" aria-label="Next: 基础知识" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              编程语言漫谈
+              基础知识
             </div>
           </div>
           <div class="md-footer__button md-icon">

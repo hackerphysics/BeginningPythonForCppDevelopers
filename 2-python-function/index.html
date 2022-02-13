@@ -10,7 +10,7 @@
       
         <link rel="canonical" href="http://python.hackerphysics.com/2-python-function/">
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../images/python.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
     
     
@@ -76,8 +76,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="C++程序员的Python入门" class="md-header__button md-logo" aria-label="C++程序员的Python入门" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../images/python.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -170,18 +169,6 @@
 
 
   <li class="md-tabs__item">
-    <a href="../0-programming-languages/" class="md-tabs__link">
-      编程语言漫谈
-    </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
     <a href="../1-python-fundamentals/" class="md-tabs__link">
       基础知识
     </a>
@@ -226,6 +213,18 @@
   </li>
 
       
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../5-python-applications/" class="md-tabs__link">
+      实战
+    </a>
+  </li>
+
+      
     </ul>
   </div>
 </nav>
@@ -251,8 +250,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="C++程序员的Python入门" class="md-nav__button md-logo" aria-label="C++程序员的Python入门" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../images/python.png" alt="logo">
 
     </a>
     C++程序员的Python入门
@@ -270,21 +268,6 @@
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
         前言
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../0-programming-languages/" class="md-nav__link">
-        编程语言漫谈
       </a>
     </li>
   
@@ -410,13 +393,34 @@
       
         <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
-    递归
+    类型注解和静态代码分析
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
+    递归
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    迭代器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    生成器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
     函数编程
   </a>
   
@@ -424,28 +428,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     函数作为变量
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     函数作为参数
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     函数作为返回值
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     闭包
   </a>
   
@@ -494,6 +498,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-python-applications/" class="md-nav__link">
+        实战
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -530,7 +549,7 @@ y = f(x)
 这个函数什么也没做，没有输入也没有输出，调用它不会产生任何效果。但你不要小看它，正所谓<strong>麻雀虽小，五脏俱全</strong>，这个函数包含的内容一点不简单。我们可以用 <em>dir()</em> 函数查看任何一个函数的细节：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nb">dir</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </code></pre></div>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="o">[</span><span class="s1">&#39;__annotations__&#39;</span>,
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="o">[</span><span class="s1">&#39;__annotations__&#39;</span>,
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a> <span class="s1">&#39;__call__&#39;</span>,
 <a id="__codelineno-3-3" name="__codelineno-3-3"></a> <span class="s1">&#39;__class__&#39;</span>,
 <a id="__codelineno-3-4" name="__codelineno-3-4"></a> <span class="s1">&#39;__closure__&#39;</span>,
@@ -565,158 +584,169 @@ y = f(x)
 <a id="__codelineno-3-33" name="__codelineno-3-33"></a> <span class="s1">&#39;__sizeof__&#39;</span>,
 <a id="__codelineno-3-34" name="__codelineno-3-34"></a> <span class="s1">&#39;__str__&#39;</span>,
 <a id="__codelineno-3-35" name="__codelineno-3-35"></a> <span class="s1">&#39;__subclasshook__&#39;</span><span class="o">]</span>
-<a id="__codelineno-3-36" name="__codelineno-3-36"></a> <span class="sb">```</span>
-<a id="__codelineno-3-37" name="__codelineno-3-37"></a>
-<a id="__codelineno-3-38" name="__codelineno-3-38"></a>&gt; dir<span class="o">()</span> 方法像是一个透视镜，是一个非常有用的工具。
-<a id="__codelineno-3-39" name="__codelineno-3-39"></a>
-<a id="__codelineno-3-40" name="__codelineno-3-40"></a>一个普通的函数已经自带了这么内容？没有想到吧。在C++中如果你定义了一个如下函数，
-<a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="sb">```</span>c++
-<a id="__codelineno-3-42" name="__codelineno-3-42"></a>void foo<span class="o">(){}</span>
+</code></pre></div>
+<blockquote>
+<p>dir() 方法像是一个透视镜，是一个非常有用的工具。</p>
+</blockquote>
+<p>一个普通的函数已经自带了这么内容？没有想到吧。在C++中如果你定义了一个如下函数，
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">(){}</span><span class="w"></span>
 </code></pre></div>
 那么它看起来就是一个什么都没有的函数，实际上占用的内存也尽可能小。那么在Python里面为什么会不一样呢？</p>
 <h2 id="_4">一切皆对象</h2>
-<p>C++虽然也是面向对象的编程语言，但是远没有其他一些面向对象的编程语言那样极端。在Python里面<strong>一切都是对象</strong>。这句话的意思是：任何变量——包括整数，浮点数，字符串，任何函数，以及任何类都是对象。想一想，在C++里面你在适用变量，函数和类的时候，还是又明显区别的吧？</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="nb">dir</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<p>C++虽然也是面向对象的编程语言，但是远没有其他一些面向对象的编程语言那样极端。在Python里面<strong>一切都是对象</strong>。这句话的意思是：任何变量——包括整数，浮点数，字符串，任何函数，以及任何类都是对象。比如我们同样用dir方法查看一个整数，你会发现它同样包含了很多内容。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nb">dir</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>[&#39;__abs__&#39;,
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a> &#39;__add__&#39;,
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a> &#39;__and__&#39;,
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a> &#39;__bool__&#39;,
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a> &#39;__ceil__&#39;,
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a> &#39;__class__&#39;,
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a> &#39;__delattr__&#39;,
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a> &#39;__dir__&#39;,
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a> &#39;__divmod__&#39;,
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a> &#39;__doc__&#39;,
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a> &#39;__eq__&#39;,
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a> &#39;__float__&#39;,
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a> &#39;__floor__&#39;,
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a> &#39;__floordiv__&#39;,
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a> &#39;__format__&#39;,
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a> &#39;__ge__&#39;,
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a> &#39;__getattribute__&#39;,
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a> &#39;__getnewargs__&#39;,
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a> &#39;__gt__&#39;,
-<a id="__codelineno-5-20" name="__codelineno-5-20"></a> &#39;__hash__&#39;,
-<a id="__codelineno-5-21" name="__codelineno-5-21"></a> &#39;__index__&#39;,
-<a id="__codelineno-5-22" name="__codelineno-5-22"></a> &#39;__init__&#39;,
-<a id="__codelineno-5-23" name="__codelineno-5-23"></a> &#39;__init_subclass__&#39;,
-<a id="__codelineno-5-24" name="__codelineno-5-24"></a> &#39;__int__&#39;,
-<a id="__codelineno-5-25" name="__codelineno-5-25"></a> &#39;__invert__&#39;,
-<a id="__codelineno-5-26" name="__codelineno-5-26"></a> &#39;denominator&#39;,
-<a id="__codelineno-5-27" name="__codelineno-5-27"></a> &#39;from_bytes&#39;,
-<a id="__codelineno-5-28" name="__codelineno-5-28"></a> &#39;imag&#39;,
-<a id="__codelineno-5-29" name="__codelineno-5-29"></a> &#39;numerator&#39;,
-<a id="__codelineno-5-30" name="__codelineno-5-30"></a> &#39;real&#39;,
-<a id="__codelineno-5-31" name="__codelineno-5-31"></a> &#39;to_bytes&#39;]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>[&#39;__abs__&#39;,
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a> &#39;__add__&#39;,
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a> &#39;__and__&#39;,
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a> &#39;__bool__&#39;,
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a> &#39;__ceil__&#39;,
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a> &#39;__class__&#39;,
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a> &#39;__delattr__&#39;,
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a> &#39;__dir__&#39;,
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a> &#39;__divmod__&#39;,
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a> &#39;__doc__&#39;,
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a> &#39;__eq__&#39;,
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a> &#39;__float__&#39;,
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a> &#39;__floor__&#39;,
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a> &#39;__floordiv__&#39;,
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a> &#39;__format__&#39;,
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a> &#39;__ge__&#39;,
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a> &#39;__getattribute__&#39;,
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a> &#39;__getnewargs__&#39;,
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a> &#39;__gt__&#39;,
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a> &#39;__hash__&#39;,
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a> &#39;__index__&#39;,
+<a id="__codelineno-6-22" name="__codelineno-6-22"></a> &#39;__init__&#39;,
+<a id="__codelineno-6-23" name="__codelineno-6-23"></a> &#39;__init_subclass__&#39;,
+<a id="__codelineno-6-24" name="__codelineno-6-24"></a> &#39;__int__&#39;,
+<a id="__codelineno-6-25" name="__codelineno-6-25"></a> &#39;__invert__&#39;,
+<a id="__codelineno-6-26" name="__codelineno-6-26"></a> &#39;denominator&#39;,
+<a id="__codelineno-6-27" name="__codelineno-6-27"></a> &#39;from_bytes&#39;,
+<a id="__codelineno-6-28" name="__codelineno-6-28"></a> &#39;imag&#39;,
+<a id="__codelineno-6-29" name="__codelineno-6-29"></a> &#39;numerator&#39;,
+<a id="__codelineno-6-30" name="__codelineno-6-30"></a> &#39;real&#39;,
+<a id="__codelineno-6-31" name="__codelineno-6-31"></a> &#39;to_bytes&#39;]
 </code></pre></div>
 <p>这些双下划线开头和结尾的方法被成为<strong>魔法方法</strong>，是Python默认为我们创建的。想一想C++中的类，当我们不显示定义构造方法的时候，编译器会帮助我们创建一个默认构造方法。因为在Python中一切皆对象，所以每个对象都有一些编译器帮忙创造的默认方法。 即使是一个什么也不做的函数，或者一个整数变量，都会又丰富的<strong>魔法方法</strong>。</p>
-<p>关于一切皆对象的概念，请慢慢去体会，它会导致与C++中完全不一样的开发体验。</p>
 <blockquote>
 <p>在C++中，即使又很多默认方法，但你是看不到他们的，相比之下，他们在Python中更加<strong>可见</strong>。可见性的概念在软件开发中很重要，这一点请在Python中慢慢体会。</p>
+<p>关于一切皆对象的概念，请慢慢去体会，它会导致与C++中完全不一样的开发体验。因为一切皆对象的缘故，在Python中你看到的内置类型和C++是有所区别的。比如int类型，在C/C++里面它只占用内存中的四个字节，但是在Python里它还包含了对象头：</p>
 </blockquote>
+<p><img alt="20220213175357" src="http://haipeng-openwrite.oss-cn-beijing.aliyuncs.com/images%5C8e02f92647b2343c12df4f2142fb6a12.png" /></p>
 <h2 id="_5">魔法方法</h2>
 <p>魔法方法通常都会被编译器自动调用，并且不同对象的默认魔法方法是不同的，上述函数和整数变量的魔法方法就有很多不同。我们以 <strong>add</strong> 这一魔法方法为例，看一下它的用途：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">a</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1"># 实际上调用了 __add__ 魔法方法</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">a</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1"># 实际上调用了 __add__ 魔法方法</span>
 </code></pre></div>
 <p>不过，Python并没有阻止我们手动去调用这些方法：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">a</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 你会得到 3</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="n">a</span><span class="o">.</span><span class="fm">__add__</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 你会得到 3</span>
 </code></pre></div>
 <p>了解这点之后，你就可以自己给任何一个对象定义__add__方法，在C++里，相当于你重载了 + 这个运算符。这一道理对其他任何魔法方法都适用，Python中的魔法方法实在是有点多，在此就不一一列举他们的作用了，需要了解的时候请尽情google之。</p>
 <h2 id="_6">函数参数</h2>
 <p>了解完魔法方法之后，我们开始定义一些真正有用的函数，并研究一下它的性质。</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">def</span> <span class="nf">print3</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">def</span> <span class="nf">print3</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
 </code></pre></div>
 这个函数只负责打印三个输入变量。这里我们并没有定义三个输入参数的类型，因为Python是动态类型语言，会在运行时去判别变量的类型，不需要在定义的时候显示指定。这给开发带来了很多灵活性。</p>
 <h3 id="key-value">位置参数和key-value参数</h3>
 <p>在调用任何一个方法或函数时，都可以有以下三种方式来传递参数:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">print3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">print3</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="n">print3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="c1"># 1 2 3</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="c1"># 1 2 3</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="c1"># 1 2 3</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">print3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="n">print3</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="n">print3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="c1"># 1 2 3</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="c1"># 1 2 3</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="c1"># 1 2 3</span>
 </code></pre></div>
 1. 首先，我们可以按位置传入每个参数，这和C++并没有什么不同。
 2. 其次，我们也可以按照参数名和值的键值对方式传入参数，当你指定参数名的时候，顺序就变得不重要了。
 3. 混合使用两种方式传入参数：前面是按照位置传入，后面按照key-value的形式传入。</p>
 <p>那么，是不是可以随便混用呢？试一试：</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">print3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="n">print3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>  File <span class="s2">&quot;C:\Users\haipw\AppData\Local\Temp/ipykernel_47416/3420492099.py&quot;</span>, line <span class="m">1</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a>    f<span class="o">(</span><span class="m">1</span>,b <span class="o">=</span> <span class="m">2</span>, <span class="m">3</span><span class="o">)</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3"></a>                ^
-<a id="__codelineno-11-4" name="__codelineno-11-4"></a>SyntaxError: positional argument follows keyword argument
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>  File <span class="s2">&quot;C:\Users\haipw\AppData\Local\Temp/ipykernel_47416/3420492099.py&quot;</span>, line <span class="m">1</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>    f<span class="o">(</span><span class="m">1</span>,b <span class="o">=</span> <span class="m">2</span>, <span class="m">3</span><span class="o">)</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>                ^
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a>SyntaxError: positional argument follows keyword argument
 </code></pre></div></p>
 <p>仔细阅读错误提示，它已经告诉你答案：<strong>SyntaxError: positional argument follows keyword argument.</strong> ，Python不允许这样做。</p>
 <h3 id="_7">可变数目参数</h3>
 <p>以上方法已经够灵活了，但是程序员的需求是无止境的，有时候我们还想更灵活一些。上面定义的函数，只能接受三个参数，如果我们想随便给一个函数传入任意数量的参数呢？（有点太随意了，但Python可以满足你）:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;args:&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a>    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;kwargs:&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7"></a>    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9"></a>
-<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11"></a>
-<a id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="c1"># 1 2 3</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="c1"># args:</span>
-<a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="c1"># 4</span>
-<a id="__codelineno-12-15" name="__codelineno-12-15"></a><span class="c1"># 5</span>
-<a id="__codelineno-12-16" name="__codelineno-12-16"></a><span class="c1"># 6</span>
-<a id="__codelineno-12-17" name="__codelineno-12-17"></a><span class="c1"># kwargs:</span>
-<a id="__codelineno-12-18" name="__codelineno-12-18"></a><span class="c1"># x 1</span>
-<a id="__codelineno-12-19" name="__codelineno-12-19"></a><span class="c1"># y 4</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;args:&quot;</span><span class="p">)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a>    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;kwargs:&quot;</span><span class="p">)</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a>    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a>
+<a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="c1"># 1 2 3</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="c1"># args:</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="c1"># 4</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="c1"># 5</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="c1"># 6</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17"></a><span class="c1"># kwargs:</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18"></a><span class="c1"># x 1</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19"></a><span class="c1"># y 4</span>
 </code></pre></div>
 <p>*args 把所有未知的 positional arguments收集到一个列表里面，**kwargs把所有未知的keyword arguments收集到一个字典里面。星号在这里可以理解为 <strong>收集</strong> 或者 <strong>打包压缩</strong>。</p>
 <h2 id="_8">函数的返回值</h2>
 <p>在c++里面，函数只能有一个返回值，如果你想返回多个值，它们必须被包含在一个对象里面。在Python里也是如此，但看起来略有不同：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a>    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span>
 </code></pre></div>
 <p>好像我们可以返回多个值啊？打印一个试试：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="c1"># (1, 2, 3)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="c1"># (1, 2, 3)</span>
 </code></pre></div>
 <p>从输出的结果看，我们得到的其实是一个元组（注意他们是被括号包裹起来的，是元组的形式）。所以虽然看起来你返回来多个结果，但是Python又偷偷做了一层处理，返回的还是一个。最终，你可以直接用一个元组变量去接收这个返回值，也可以利用<strong>多元赋值</strong>的性质，直接把元组赋值给三个变量。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="n">x</span> <span class="o">=</span> <span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="n">x</span> <span class="o">=</span> <span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <p>第二种写法，看起来和你返回了多个结果没什么区别。试想一下，如果让你写一个函数返回一个整数，一个数组和一个字符串，在C++里面你会怎么实现？而在Python里面，你甚至都不用想去如何实现，直接返回就是了。</p>
-<h2 id="_9">递归</h2>
-<p>支持递归是编程语言的基本要求，Python自然也不例外。我们尝试用递归计算斐波那契数列的第n项：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3"></a>        <span class="k">return</span> <span class="kc">None</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5"></a>        <span class="k">return</span> <span class="mi">1</span>
-<a id="__codelineno-16-6" name="__codelineno-16-6"></a>    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-<a id="__codelineno-16-7" name="__codelineno-16-7"></a>        <span class="k">return</span> <span class="mi">1</span>
-<a id="__codelineno-16-8" name="__codelineno-16-8"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-16-9" name="__codelineno-16-9"></a>        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-16-10" name="__codelineno-16-10"></a>
-<a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<a id="__codelineno-16-12" name="__codelineno-16-12"></a>
-<a id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="c1"># 55</span>
+<h2 id="_9">类型注解和静态代码分析</h2>
+<p>函数的参数和返回值也是动态类型，这虽然很灵活，但是也会带来很多问题，让一些隐藏的bug不容易被发现。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">c</span><span class="p">:</span><span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a>    <span class="k">return</span> <span class="p">{}</span>
 </code></pre></div>
-<h2 id="_10">函数编程</h2>
-<h3 id="_11">函数作为变量</h3>
-<h3 id="_12">函数作为参数</h3>
+<p>linter 静态代码分析工具。可以帮助你检查潜在的错误。这样你可以在运行之前发现问题，而不是在代码上线之后才发现一堆bug~。</p>
+<h2 id="_10">递归</h2>
+<p>支持递归是编程语言的基本要求，Python自然也不例外。我们尝试用递归计算斐波那契数列的第n项：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a>        <span class="k">return</span> <span class="kc">None</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a>    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9"></a>        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10"></a>
+<a id="__codelineno-18-11" name="__codelineno-18-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12"></a>
+<a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="c1"># output：</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14"></a><span class="c1"># 55</span>
+</code></pre></div>
+<h2 id="_11">迭代器</h2>
+<h2 id="_12">生成器</h2>
+<p><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /><a href="https://www.cnblogs.com/liangmingshen/p/9706181.html">生成器</a></p>
+<h2 id="_13">函数编程</h2>
+<p>lambda 表达式</p>
+<h3 id="_14">函数作为变量</h3>
+<h3 id="_15">函数作为参数</h3>
 <p>函数作为参数最典型的例子就是排序。如果你有一个列表，你想对它按照自己定义的方式排序。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">sort</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="n">sort</span>
 </code></pre></div>
 <p>map</p>
 <p>reduce</p>
-<h3 id="_13">函数作为返回值</h3>
-<h3 id="_14">闭包</h3>
+<h3 id="_16">函数作为返回值</h3>
+<h3 id="_17">闭包</h3>
 
               
             </article>
