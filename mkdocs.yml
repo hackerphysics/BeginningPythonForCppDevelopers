@@ -6,6 +6,8 @@ theme:
     font:
       text: Roboto
       code: Roboto Mono
+    logo: images/python.png
+    favicon: images/python.png
     features:
       - navigation.expand
       - navigation.top
@@ -15,11 +17,12 @@ theme:
       - content.code.annotate
 nav:
     - '前言': 'index.md'
-    - '编程语言漫谈': '0-programming-languages.md'
+    # - '编程语言漫谈': '0-programming-languages.md'
     - '基础知识': '1-python-fundamentals.md'
     - '函数': '2-python-function.md'
     - '类':  '3-python-class.md'
     - '模块': '4-python-module.md'
+    - '实战': '5-python-applications.md'
 
 markdown_extensions:
   - pymdownx.caret
@@ -32,7 +35,9 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6

@@ -1,3 +1,5 @@
+本教程写给具有C++编程经验的程序员，希望能帮助更好地学习和理解Python。
+
 ## 关于Python
 
 >Python 是一种极少数能兼具**简单**与**功能强大**的编程语言。你将惊异于发现你正在使用的这门编程语言是如此简单，它专注于如何解决问题，而非拘泥于语法与结构。 —— 《简明Python教程》
@@ -27,3 +29,9 @@ Python的应用领域非常广泛，无论从哪个角度看，Python都是开�
 - Language development.
 - Finance.
 - ...
+
+## 参考资料 
+
+- [《Python 基础教程》](https://www.runoob.com/python/python-tutorial.html)
+- [《A Byte of Python》](https://python.swaroopch.com/)
+- 《Functional Programming in Python》
