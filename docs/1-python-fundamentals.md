@@ -176,7 +176,7 @@ s = f"{a} {get_years_old()} {c}"
 
 ## 数据结构
 
-set、list、tuple、dict都是容器类型，C++的标准库里也支持list，set等类型，其数据结构是一样的。不过在Python里使用起来会异常方便顺手。元组tuple和列表list的区别是元组不可被修改，其他性质都一样。
+set、list、tuple、dict都是容器类型，元组tuple就是不可修改的列表list。与set，list，dict相对应，C++的标准库里也支持list，set，map等类型，不过在Python里使用它们会异常方便。
 
 **创建**
 
@@ -201,30 +201,137 @@ a = (1,2,"hello")
 # 创建字典， 类似C++标准库中的map
 a = dict()
 a = {}
-a = {1:"d", "2":9} # key 和 value的值也是任意的对象，这点和C++明显不同
+a = {1:"d", "2":9} # key 和 value的值也是任意的对象，这点和C++不同
 ```
 
 ```python
 # 创建集合
 a = set()
-a = {1,"d", "2",9,1.0,1} # 集合里的元素也可以是任何对象，这点和C++明显不同
+a = {1,"d", "2",9,1.0,1} # 集合里的元素也可以是任何对象，这点和C++不同
 ```
 
-**访问**
+**访问元素**
 
-- 下标访问
-  
-list和tuple类型的访问方式是一样的
+- 按下标访问列表
+
+```python
+# 访问列表
+a = [1,2,"hello"]
+a[0] # 1
+a[2] # hello
+a[-1] # hello, 负数代表反方向，很容易理解
+```
+
+> 访问元组的方式相同。set类型不可以用下标访问，思考一下为什么？:thinking:
+
+- 按key访问字典
+
+```python
+# 访问字典
+a = {1:"d", "2":9}
+a[1] # "d"
+a["2"] # 9
+```
+
+- 切片 slicing
+
+可以用range函数来创建一个连续整数列表，range函数生成的其实是迭代器，关于什么是迭代器后面会仔细讲，这里你只需要知道必须用list函数把迭代器转换成列表。
+
+```python
+a = list(range(10)) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+a[0:1] # [0]
+a[2:4] # [2,3]
+a[-2:-1] # [8]
+```
 
 - 遍历访问
 
-集合元素是不可以被直接访问的。
 
-- 切片
-  
+**添加元素**
 
-**切片**
+```python
+# 集合
+a = set()
+a.add(1)
+a.add("ok")
 
+# 列表
+a = []
+a.append(1)
+a.append("ok")
+
+# 字典
+a = {}
+a.update({"name":"wang"})
+a.update({"age":18})
+```
+
+
+**删除元素**
+
+```python
+# 集合
+a = set()
+a.add(1)
+a.add("ok")
+a.remove("ok")
+
+# 列表
+a = []
+a.append(1)
+a.append("ok")
+a.remove("ok")
+
+# 字典
+a = {}
+a.update({"name":"wang"})
+a.update({"age":18})
+del a["name"]
+```
+
+**遍历元素**
+
+遍历这些容器的时候我们需要用到 in 这个运算符，list，tuple，set的遍历方式都是一样的：
+
+```python
+a = [1,2,"ok"]
+for x in a:
+    print(x)
+```
+
+字典比较特殊，它每个元素其实是个 key-value的pair，所以按照排列组合，你有很多种去迭代它的方式：
+
+```python
+a = {}
+a.update({"name":"wang"})
+a.update({"age":18})
+
+for x in a: # 默认迭代keys
+    print(x)
+# output：
+# name
+# age
+
+for x in a.keys():
+    print(x)
+# output：
+# name
+# age
+
+for x in a.values():
+    print(x)
+# output：
+# wang
+# 18
+
+for k,v in a.items(): # k,v = (k,v)
+    print(k,v)
+# output：
+# name : wang
+# age : 18
+```
+
+items() 函数返回的元素其实是个长度为2的元组，元组在任何时候都可以直接展开成多个元素。
 
 ## 类型转换
 
@@ -242,6 +349,15 @@ list和tuple类型的访问方式是一样的
 其中bytes类型可以被当作字符串，只不过是字符串的另外一种表示方法。如果要将int或者float转换成bytes，则需要考虑到诸如字节数，大端或小端等细节，用到的场景比较少，在此就不做介绍了。
 
 其他类型转换成bool类型的时候，只有为**零**为**空**的时候才会被转换成False，其他情况一律转换成True，这一点需要注意。
+
+```python
+bool(set()) # False
+bool([]) # False
+bool({}) # False
+bool("") # False
+bool(0) # False
+bool(0.0) # False
+```
 
 ## 运算符和表达式
 
@@ -274,9 +390,13 @@ if not a:
     print("ok")
 ```
 
-另外，Python中还有一个成员运算符：in，用来判断一个元素是否在另一个容器里面。
-条件表达式  
+另外，Python中还有一个成员运算符：in，用来判断一个元素是否在另一个容器里面。这和for循环中使用的in有些像，但功能不太相同。
 
+```python
+a = [1,2,5]
+if 1 in a:
+    print("ok")
+```
 
 ## 流程控制
 
@@ -285,15 +405,63 @@ if not a:
 [条件语句](https://www.runoob.com/python/python-if-statement.html)
 [循环语句](https://www.runoob.com/python/python-loops.html)
 
-## 数据结构
-
-
 ## IO和文件操作
 
-## 标准库
+- 读文件
+
+
+- 写文件
+
+
+- 读二进制文件
+
+- 写二进制文件
+
 
 ## Python和System交互
 
+
+## 标准库
+
+
 ## 语法糖
 
-什么是语法糖？
+:link: [https://blog.csdn.net/five3/article/details/83474633](https://blog.csdn.net/five3/article/details/83474633)
+:link: [https://medium.com/analytics-vidhya/syntactic-sugar-in-python-3e61d1ef2bbf](https://medium.com/analytics-vidhya/syntactic-sugar-in-python-3e61d1ef2bbf)
+
+语法糖（Syntactic sugar），也译为糖衣语法，是由英国计算机科学家彼得·约翰·兰达（Peter J. Landin）发明的一个术语，指计算机语言中添加的某种语法，这种语法对语言的功能并没有影响，但是更方便程序员使用。通常来说使用语法糖能够增加程序的可读性，从而减少程序代码出错的机会。
+
+- 条件赋值
+
+类似c++中的三目运算符。
+
+```python
+b = 2 
+c = 3
+
+if b > c:
+    a = b
+else:
+    a = c
+
+# 更优雅的写法
+a = c if c > b else b
+```
+
+- 多元赋值
+
+```python
+a = 1; b = 2; c = 3
+
+# 更优雅的写法
+a,b,c = 1,2,3
+```
+
+- 列表推导表达式
+
+集合和生成器
+
+字典
+
+yield
+
