@@ -19,7 +19,8 @@ nav:
     - '函数': '2-python-function.md'
     - '类':  '3-python-class.md'
     - '模块': '4-python-module.md'
-    - '实战': '5-python-applications.md'
+    - 'NumPy': '5-python-numpy.md'
+    - '实战': '6-python-applications.md'
 
 markdown_extensions:
   - pymdownx.caret

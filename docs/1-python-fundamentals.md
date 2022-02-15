@@ -44,7 +44,7 @@ Python可以很方便地在其他工具中运行，Pycharm、VS Code、jupyter n
 
 ## 注释
 
-Python里面有两种注释：
+和C++一样，Python里面也有两种注释：一种是单行注释，另一种是多行注释:smile:。
 
 ```python
 # 这是一行注释
@@ -57,7 +57,7 @@ print("hello world") #这是行尾注释
 
 ## 变量和类型
 
-在Python里面你可以直接使用任何变量，不需要显示指定变量的类型，也不需要提前声明，这和MATLAB里面的用法类似。
+与C++不同，在Python里面你可以直接使用任何变量，不需要显示指定变量的类型，也不需要提前声明，这和MATLAB里面的用法类似。
 
 ```python
 a = 1
@@ -170,7 +170,7 @@ s = f"{a} {get_years_old()} {c}"
 
 ```
 
-:book: [Python 3's f-Strings](https://realpython.com/python-f-strings/)
+:link: [Python 3's f-Strings](https://realpython.com/python-f-strings/)
 
 推荐使用第三种方式，当你习惯之后，你会忘掉前两种:smile:。
 
@@ -420,6 +420,9 @@ if 1 in a:
 
 ## Python和System交互
 
+在Python里面你可以非常方便的和系统进行交互：
+
+
 
 ## 标准库
 
@@ -433,8 +436,6 @@ if 1 in a:
 
 - 条件赋值
 
-类似c++中的三目运算符。
-
 ```python
 b = 2 
 c = 3
@@ -445,8 +446,11 @@ else:
     a = c
 
 # 更优雅的写法
+# 等价于C++种的 a = c > b ? c : a
 a = c if c > b else b
+
 ```
+虽然Python中没有问号和冒号组成的三目运算符,但是可以用if else的条件赋值代替.
 
 - 多元赋值
 
@@ -457,11 +461,23 @@ a = 1; b = 2; c = 3
 a,b,c = 1,2,3
 ```
 
-- 列表推导表达式
+- 列表推导式
 
-集合和生成器
+如果我们想把一个列表中的每个元素变成平方:
 
-字典
+```python
+a = [0,1,2,3,5,6]
+b = []
+for x in a:
+    b.append(x**2)
 
-yield
+# 更优雅的写法
+b = [x**2 for x in a]
+```
+
+> 如果使用 numpy, 你还可以对array直接进行操作
+
+- 集合推导式
+
+- 字典推导式
 
