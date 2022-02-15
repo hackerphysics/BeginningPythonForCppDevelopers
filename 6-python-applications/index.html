@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="http://python.hackerphysics.com/0-programming-languages/">
+        <link rel="canonical" href="http://python.hackerphysics.com/6-python-applications/">
       
       <link rel="icon" href="../images/python.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
     
     
       
-        <title>编程语言漫谈 - C++程序员的Python入门</title>
+        <title>实战 - C++程序员的Python入门</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#python" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              编程语言漫谈
+              实战
             
           </span>
         </div>
@@ -226,10 +226,12 @@
         
   
   
+    
+  
 
 
   <li class="md-tabs__item">
-    <a href="../6-python-applications/" class="md-tabs__link">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
       实战
     </a>
   </li>
@@ -364,11 +366,85 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../6-python-applications/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          实战
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         实战
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    计算机视觉
+  </a>
+  
+    <nav class="md-nav" aria-label="计算机视觉">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    医学影像
+  </a>
+  
+    <nav class="md-nav" aria-label="医学影像">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ct" class="md-nav__link">
+    CT图像人体轮廓分割
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ct_1" class="md-nav__link">
+    CT图像肺部轮廓分割分割
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -386,23 +462,14 @@
               
                 
 
-<h1 id="_1">编程语言漫谈</h1>
-<h2 id="_2">计算机的诞生</h2>
-<p>最早的计算机仅仅是为了解决复杂而繁重的数字运算而设计，其功能和使用方式和我们现在用的<strong>计算器</strong>接近，这一阶段的computer更像是calculator。</p>
-<p><img alt="20220213154903" src="http://haipeng-openwrite.oss-cn-beijing.aliyuncs.com/images%5C73031bcf9deded66bb43634a3c3bd3a2.png" /></p>
-<p>当计算机被设计出来之后，它的强大力量开始逐渐展现，其所能够解决的问题远远超出了数字运算的范畴，这恐怕也是最早的计算机设计者始料未及的。</p>
-<p><strong>1801年</strong></p>
-<p>法国发明家Joseph-Marie Jacquard设计出一种专用计算机：织布机。Jacquard的织布机利用打了孔的卡片为图样编制程序，而输出的是织好的布匹。虽然这还算不上一款真正的计算机，但其对将来发展出其他可编程机器起了重要作用。</p>
-<p><img alt="20220213160754" src="http://haipeng-openwrite.oss-cn-beijing.aliyuncs.com/images%5Cf823baa89555e3c91eac0bb580116040.png" /></p>
-<p><strong>1821年</strong></p>
-<p>英国数学家Charles Babbage 构想出一台</p>
-<p>1834年发明了分析机（现代电子计算机的前身）的原理。在这项设计中，他曾设想根据储存数据的穿孔卡上的指令进行任何数学运算的可能性，并设想了现代计算机所具有的大多数其他特性，但因 1842 年政府拒绝进一步支持他的工作，巴贝奇的计算器未能完成。</p>
-<p><strong>1848年</strong></p>
-<p>英国数学家、诗人拜伦勋爵的女儿 Ada Lovelace 编写了世界上第一个计算机程序。根据德国明斯特大学理论数学教授安娜·西弗特的说法，洛夫莱斯编写了第一个程序，同时将关于巴贝奇分析引擎的论文从法语翻译成英语。Lovelace 还为使用 Babbage 的机器计算伯努利数添加了一步一步的描述（基本上是一种算法），这实际上使她成为世界上第一个计算机程序员。</p>
-<h2 id="_3">参考资料</h2>
-<ul>
-<li>https://www.livescience.com/20718-computer-history.html </li>
-</ul>
+<h1 id="python">Python应用实战</h1>
+<h2 id="_1">计算机视觉</h2>
+<h3 id="_2">医学影像</h3>
+<h4 id="ct">CT图像人体轮廓分割</h4>
+<p><strong>Floodfill 算法</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>
+</code></pre></div>
+<h4 id="ct_1">CT图像肺部轮廓分割分割</h4>
 
               
             </article>
@@ -417,6 +484,26 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../5-python-numpy/" class="md-footer__link md-footer__link--prev" aria-label="Previous: NumPy" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              NumPy
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

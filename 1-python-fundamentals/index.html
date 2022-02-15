@@ -219,7 +219,19 @@
 
 
   <li class="md-tabs__item">
-    <a href="../5-python-applications/" class="md-tabs__link">
+    <a href="../5-python-numpy/" class="md-tabs__link">
+      NumPy
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../6-python-applications/" class="md-tabs__link">
       实战
     </a>
   </li>
@@ -371,22 +383,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    数据结构
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#io" class="md-nav__link">
     IO和文件操作
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    标准库
   </a>
   
 </li>
@@ -399,7 +397,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
+    标准库
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
     语法糖
   </a>
   
@@ -466,7 +471,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../5-python-applications/" class="md-nav__link">
+      <a href="../5-python-numpy/" class="md-nav__link">
+        NumPy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-python-applications/" class="md-nav__link">
         实战
       </a>
     </li>
@@ -514,7 +534,7 @@ A read–eval–print loop (REPL), also termed an interactive toplevel or langua
 <p><strong>其他运行Python的方式</strong></p>
 <p>Python可以很方便地在其他工具中运行，Pycharm、VS Code、jupyter notebook，等等，这些IDE或编辑器会帮助我们调用Python解释器，更加方便。</p>
 <h2 id="_2">注释</h2>
-<p>Python里面有两种注释：</p>
+<p>和C++一样，Python里面也有两种注释：一种是单行注释，另一种是多行注释<img alt="😄" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f604.svg" title=":smile:" />。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># 这是一行注释</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span> <span class="c1">#这是行尾注释</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="sd">&quot;&quot;&quot;</span>
@@ -523,7 +543,7 @@ A read–eval–print loop (REPL), also termed an interactive toplevel or langua
 <a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="sd">&quot;&quot;&quot;</span>
 </code></pre></div>
 <h2 id="_3">变量和类型</h2>
-<p>在Python里面你可以直接使用任何变量，不需要显示指定变量的类型，也不需要提前声明，这和MATLAB里面的用法类似。</p>
+<p>与C++不同，在Python里面你可以直接使用任何变量，不需要显示指定变量的类型，也不需要提前声明，这和MATLAB里面的用法类似。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;hell0&quot;</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">a</span> <span class="o">=</span> <span class="mf">0.5</span>
@@ -646,10 +666,10 @@ A read–eval–print loop (REPL), also termed an interactive toplevel or langua
 <a id="__codelineno-8-33" name="__codelineno-8-33"></a><span class="c1"># 你可以直接在大括号里调用函数，实际上，你可以直接在这里“写代码”。</span>
 <a id="__codelineno-8-34" name="__codelineno-8-34"></a><span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">get_years_old</span><span class="p">()</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span>
 </code></pre></div>
-<p><img alt="📖" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f4d6.svg" title=":book:" /> <a href="https://realpython.com/python-f-strings/">Python 3's f-Strings</a></p>
+<p><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /> <a href="https://realpython.com/python-f-strings/">Python 3's f-Strings</a></p>
 <p>推荐使用第三种方式，当你习惯之后，你会忘掉前两种<img alt="😄" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f604.svg" title=":smile:" />。</p>
 <h2 id="_4">数据结构</h2>
-<p>set、list、tuple、dict都是容器类型，C++的标准库里也支持list，set等类型，其数据结构是一样的。不过在Python里使用起来会异常方便顺手。元组tuple和列表list的区别是元组不可被修改，其他性质都一样。</p>
+<p>set、list、tuple、dict都是容器类型，元组tuple就是不可修改的列表list。与set，list，dict相对应，C++的标准库里也支持list，set，map等类型，不过在Python里使用它们会异常方便。</p>
 <p><strong>创建</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># 创建列表的几种方式</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
@@ -667,25 +687,116 @@ A read–eval–print loop (REPL), also termed an interactive toplevel or langua
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># 创建字典， 类似C++标准库中的map</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">a</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">a</span> <span class="o">=</span> <span class="p">{}</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span><span class="mi">9</span><span class="p">}</span> <span class="c1"># key 和 value的值也是任意的对象，这点和C++明显不同</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span><span class="mi">9</span><span class="p">}</span> <span class="c1"># key 和 value的值也是任意的对象，这点和C++不同</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># 创建集合</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span> <span class="c1"># 集合里的元素也可以是任何对象，这点和C++明显不同</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span> <span class="c1"># 集合里的元素也可以是任何对象，这点和C++不同</span>
 </code></pre></div>
-<p><strong>访问</strong></p>
+<p><strong>访问元素</strong></p>
 <ul>
-<li>下标访问</li>
+<li>按下标访问列表</li>
 </ul>
-<p>list和tuple类型的访问方式是一样的</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="c1"># 访问列表</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;hello&quot;</span><span class="p">]</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># 1</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># hello</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># hello, 负数代表反方向，很容易理解</span>
+</code></pre></div>
+<blockquote>
+<p>访问元组的方式相同。set类型不可以用下标访问，思考一下为什么？<img alt="🤔" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f914.svg" title=":thinking:" /></p>
+</blockquote>
+<ul>
+<li>按key访问字典</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="c1"># 访问字典</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span><span class="mi">9</span><span class="p">}</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># &quot;d&quot;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="n">a</span><span class="p">[</span><span class="s2">&quot;2&quot;</span><span class="p">]</span> <span class="c1"># 9</span>
+</code></pre></div>
+<ul>
+<li>切片 slicing</li>
+</ul>
+<p>可以用range函数来创建一个连续整数列表，range函数生成的其实是迭代器，关于什么是迭代器后面会仔细讲，这里你只需要知道必须用list函数把迭代器转换成列表。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># [0]</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="c1"># [2,3]</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># [8]</span>
+</code></pre></div>
 <ul>
 <li>遍历访问</li>
 </ul>
-<p>集合元素是不可以被直接访问的。</p>
-<ul>
-<li>切片</li>
-</ul>
-<p><strong>切片</strong></p>
+<p><strong>添加元素</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="c1"># 集合</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="c1"># 列表</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10"></a>
+<a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="c1"># 字典</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="n">a</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="n">a</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;wang&quot;</span><span class="p">})</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="n">a</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;age&quot;</span><span class="p">:</span><span class="mi">18</span><span class="p">})</span>
+</code></pre></div>
+<p><strong>删除元素</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="c1"># 集合</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="n">a</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="n">a</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="c1"># 列表</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11"></a><span class="n">a</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12"></a>
+<a id="__codelineno-17-13" name="__codelineno-17-13"></a><span class="c1"># 字典</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14"></a><span class="n">a</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15"></a><span class="n">a</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;wang&quot;</span><span class="p">})</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16"></a><span class="n">a</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;age&quot;</span><span class="p">:</span><span class="mi">18</span><span class="p">})</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17"></a><span class="k">del</span> <span class="n">a</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p><strong>遍历元素</strong></p>
+<p>遍历这些容器的时候我们需要用到 in 这个运算符，list，tuple，set的遍历方式都是一样的：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;ok&quot;</span><span class="p">]</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+<p>字典比较特殊，它每个元素其实是个 key-value的pair，所以按照排列组合，你有很多种去迭代它的方式：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="n">a</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="n">a</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;wang&quot;</span><span class="p">})</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="n">a</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;age&quot;</span><span class="p">:</span><span class="mi">18</span><span class="p">})</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a>
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span> <span class="c1"># 默认迭代keys</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="c1"># output：</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="c1"># name</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="c1"># age</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10"></a>
+<a id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13"></a><span class="c1"># output：</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14"></a><span class="c1"># name</span>
+<a id="__codelineno-19-15" name="__codelineno-19-15"></a><span class="c1"># age</span>
+<a id="__codelineno-19-16" name="__codelineno-19-16"></a>
+<a id="__codelineno-19-17" name="__codelineno-19-17"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+<a id="__codelineno-19-18" name="__codelineno-19-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-19-19" name="__codelineno-19-19"></a><span class="c1"># output：</span>
+<a id="__codelineno-19-20" name="__codelineno-19-20"></a><span class="c1"># wang</span>
+<a id="__codelineno-19-21" name="__codelineno-19-21"></a><span class="c1"># 18</span>
+<a id="__codelineno-19-22" name="__codelineno-19-22"></a>
+<a id="__codelineno-19-23" name="__codelineno-19-23"></a><span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> <span class="c1"># k,v = (k,v)</span>
+<a id="__codelineno-19-24" name="__codelineno-19-24"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+<a id="__codelineno-19-25" name="__codelineno-19-25"></a><span class="c1"># output：</span>
+<a id="__codelineno-19-26" name="__codelineno-19-26"></a><span class="c1"># name : wang</span>
+<a id="__codelineno-19-27" name="__codelineno-19-27"></a><span class="c1"># age : 18</span>
+</code></pre></div>
+<p>items() 函数返回的元素其实是个长度为2的元组，元组在任何时候都可以直接展开成多个元素。</p>
 <h2 id="_5">类型转换</h2>
 <p>类型之间的转换方法如下表：</p>
 <table>
@@ -759,39 +870,112 @@ A read–eval–print loop (REPL), also termed an interactive toplevel or langua
 </table>
 <p>其中bytes类型可以被当作字符串，只不过是字符串的另外一种表示方法。如果要将int或者float转换成bytes，则需要考虑到诸如字节数，大端或小端等细节，用到的场景比较少，在此就不做介绍了。</p>
 <p>其他类型转换成bool类型的时候，只有为<strong>零</strong>为<strong>空</strong>的时候才会被转换成False，其他情况一律转换成True，这一点需要注意。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="nb">bool</span><span class="p">(</span><span class="nb">set</span><span class="p">())</span> <span class="c1"># False</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="nb">bool</span><span class="p">([])</span> <span class="c1"># False</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="nb">bool</span><span class="p">({})</span> <span class="c1"># False</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="nb">bool</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="c1"># False</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># False</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="nb">bool</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span> <span class="c1"># False</span>
+</code></pre></div>
 <h2 id="_6">运算符和表达式</h2>
 <p><strong>消失的小括号、大括号和分号</strong></p>
 <p>在Python里面我们不需要使用大括号来包裹一个代码块，具有相同<strong>缩进</strong>的代码会自动属于一个代码块。所以大括号在这里消失了。
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ok&quot;</span><span class="p">);</span><span class="w"></span>
-<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ok&quot;</span><span class="p">);</span><span class="w"></span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>运算符和表达式比较基础，可以直接参考： <a href="https://www.runoob.com/python/python-operators.html">https://www.runoob.com/python/python-operators.html</a> </p>
 <p>绝大部分运算发符在C++之中都有对应，这里值得一提的是Python中的逻辑运算符直接使用： and、or、not，理解起来非常方便。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="k">if</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="k">if</span> <span class="n">a</span> <span class="ow">or</span> <span class="n">b</span><span class="p">:</span>
-<a id="__codelineno-15-6" name="__codelineno-15-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
-<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="k">if</span> <span class="ow">not</span> <span class="n">a</span><span class="p">:</span>
-<a id="__codelineno-15-8" name="__codelineno-15-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="k">if</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="k">if</span> <span class="n">a</span> <span class="ow">or</span> <span class="n">b</span><span class="p">:</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="k">if</span> <span class="ow">not</span> <span class="n">a</span><span class="p">:</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>另外，Python中还有一个成员运算符：in，用来判断一个元素是否在另一个容器里面。
-条件表达式  </p>
+<p>另外，Python中还有一个成员运算符：in，用来判断一个元素是否在另一个容器里面。这和for循环中使用的in有些像，但功能不太相同。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="k">if</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">)</span>
+</code></pre></div>
 <h2 id="_7">流程控制</h2>
 <p>条件语句和循环控制语句比较基础，和C++中没有太大区别，可以直接参考以下链接：</p>
 <p><a href="https://www.runoob.com/python/python-if-statement.html">条件语句</a>
 <a href="https://www.runoob.com/python/python-loops.html">循环语句</a></p>
-<h2 id="_8">数据结构</h2>
 <h2 id="io">IO和文件操作</h2>
-<h2 id="_9">标准库</h2>
+<ul>
+<li>
+<p>读文件</p>
+</li>
+<li>
+<p>写文件</p>
+</li>
+<li>
+<p>读二进制文件</p>
+</li>
+<li>
+<p>写二进制文件</p>
+</li>
+</ul>
 <h2 id="pythonsystem">Python和System交互</h2>
-<h2 id="_10">语法糖</h2>
-<p>什么是语法糖？</p>
+<p>在Python里面你可以非常方便的和系统进行交互：</p>
+<h2 id="_8">标准库</h2>
+<h2 id="_9">语法糖</h2>
+<p><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /> <a href="https://blog.csdn.net/five3/article/details/83474633">https://blog.csdn.net/five3/article/details/83474633</a>
+<img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /> <a href="https://medium.com/analytics-vidhya/syntactic-sugar-in-python-3e61d1ef2bbf">https://medium.com/analytics-vidhya/syntactic-sugar-in-python-3e61d1ef2bbf</a></p>
+<p>语法糖（Syntactic sugar），也译为糖衣语法，是由英国计算机科学家彼得·约翰·兰达（Peter J. Landin）发明的一个术语，指计算机语言中添加的某种语法，这种语法对语言的功能并没有影响，但是更方便程序员使用。通常来说使用语法糖能够增加程序的可读性，从而减少程序代码出错的机会。</p>
+<ul>
+<li>条件赋值</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span> 
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a>
+<a id="__codelineno-25-4" name="__codelineno-25-4"></a><span class="k">if</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">:</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5"></a>    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7"></a>    <span class="n">a</span> <span class="o">=</span> <span class="n">c</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8"></a>
+<a id="__codelineno-25-9" name="__codelineno-25-9"></a><span class="c1"># 更优雅的写法</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10"></a><span class="c1"># 等价于C++种的 a = c &gt; b ? c : a</span>
+<a id="__codelineno-25-11" name="__codelineno-25-11"></a><span class="n">a</span> <span class="o">=</span> <span class="n">c</span> <span class="k">if</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="k">else</span> <span class="n">b</span>
+</code></pre></div>
+虽然Python中没有问号和冒号组成的三目运算符,但是可以用if else的条件赋值代替.</p>
+<ul>
+<li>多元赋值</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="c1"># 更优雅的写法</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
+</code></pre></div>
+<ul>
+<li>列表推导式</li>
+</ul>
+<p>如果我们想把一个列表中的每个元素变成平方:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="n">b</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4"></a>    <span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5"></a>
+<a id="__codelineno-27-6" name="__codelineno-27-6"></a><span class="c1"># 更优雅的写法</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7"></a><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+</code></pre></div>
+<blockquote>
+<p>如果使用 numpy, 你还可以对array直接进行操作</p>
+</blockquote>
+<ul>
+<li>
+<p>集合推导式</p>
+</li>
+<li>
+<p>字典推导式</p>
+</li>
+</ul>
 
               
             </article>

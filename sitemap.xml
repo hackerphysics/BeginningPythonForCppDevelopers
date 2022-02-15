@@ -2,37 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://python.hackerphysics.com/</loc>
-         <lastmod>2022-02-13</lastmod>
+         <lastmod>2022-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://python.hackerphysics.com/0-programming-languages/</loc>
-         <lastmod>2022-02-13</lastmod>
+         <lastmod>2022-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://python.hackerphysics.com/1-python-fundamentals/</loc>
-         <lastmod>2022-02-13</lastmod>
+         <lastmod>2022-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://python.hackerphysics.com/2-python-function/</loc>
-         <lastmod>2022-02-13</lastmod>
+         <lastmod>2022-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://python.hackerphysics.com/3-python-class/</loc>
-         <lastmod>2022-02-13</lastmod>
+         <lastmod>2022-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://python.hackerphysics.com/4-python-module/</loc>
-         <lastmod>2022-02-13</lastmod>
+         <lastmod>2022-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>http://python.hackerphysics.com/5-python-applications/</loc>
-         <lastmod>2022-02-13</lastmod>
+         <loc>http://python.hackerphysics.com/5-python-numpy/</loc>
+         <lastmod>2022-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://python.hackerphysics.com/6-python-applications/</loc>
+         <lastmod>2022-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
