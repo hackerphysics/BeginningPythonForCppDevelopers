@@ -19,7 +19,7 @@ nav:
     - '函数': '2-python-function.md'
     - '类':  '3-python-class.md'
     - '模块': '4-python-module.md'
-    - 'NumPy': '5-python-numpy.md'
+    - '科学计算': '5-python-numpy.md'
     - '实战': '6-python-applications.md'
 
 markdown_extensions:

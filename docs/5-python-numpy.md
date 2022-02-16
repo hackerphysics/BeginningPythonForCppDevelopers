@@ -1,3 +1,7 @@
-# NumPy（Numerical Python）
+# 科学计算
 
-如果你除了C++之外还熟悉MATLAB
+## 数学函数
+
+
+## Numpy
+

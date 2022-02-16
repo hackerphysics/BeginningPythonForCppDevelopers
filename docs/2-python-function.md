@@ -258,7 +258,19 @@ def foo(a:int, b:str, c:list) -> dict:
 linter 静态代码分析工具。可以帮助你检查潜在的错误。这样你可以在运行之前发现问题，而不是在代码上线之后才发现一堆bug~。
 
 
-## 递归
+## 函数编程
+
+lambda 表达式
+
+### 迭代器
+
+### 生成器
+
+:link:[生成器](https://www.cnblogs.com/liangmingshen/p/9706181.html)
+
+
+
+### 递归
 
 支持递归是编程语言的基本要求，Python自然也不例外。我们尝试用递归计算斐波那契数列的第n项：
 
@@ -280,17 +292,6 @@ print(fib(10))
 # 55
 
 ```
-
-## 迭代器
-
-## 生成器
-
-:link:[生成器](https://www.cnblogs.com/liangmingshen/p/9706181.html)
-
-## 函数编程
-
-lambda 表达式
-
 ### 函数作为变量
 
 ### 函数作为参数
