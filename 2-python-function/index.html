@@ -220,7 +220,7 @@
 
   <li class="md-tabs__item">
     <a href="../5-python-numpy/" class="md-tabs__link">
-      NumPy
+      科学计算
     </a>
   </li>
 
@@ -412,32 +412,32 @@
       
         <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
-    递归
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    迭代器
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    生成器
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
     函数编程
   </a>
   
     <nav class="md-nav" aria-label="函数编程">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    迭代器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    生成器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    递归
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_14" class="md-nav__link">
@@ -519,7 +519,7 @@
   
     <li class="md-nav__item">
       <a href="../5-python-numpy/" class="md-nav__link">
-        NumPy
+        科学计算
       </a>
     </li>
   
@@ -743,7 +743,12 @@ y = f(x)
 <a id="__codelineno-17-2" name="__codelineno-17-2"></a>    <span class="k">return</span> <span class="p">{}</span>
 </code></pre></div>
 <p>linter 静态代码分析工具。可以帮助你检查潜在的错误。这样你可以在运行之前发现问题，而不是在代码上线之后才发现一堆bug~。</p>
-<h2 id="_10">递归</h2>
+<h2 id="_10">函数编程</h2>
+<p>lambda 表达式</p>
+<h3 id="_11">迭代器</h3>
+<h3 id="_12">生成器</h3>
+<p><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /><a href="https://www.cnblogs.com/liangmingshen/p/9706181.html">生成器</a></p>
+<h3 id="_13">递归</h3>
 <p>支持递归是编程语言的基本要求，Python自然也不例外。我们尝试用递归计算斐波那契数列的第n项：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <a id="__codelineno-18-2" name="__codelineno-18-2"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
@@ -760,11 +765,6 @@ y = f(x)
 <a id="__codelineno-18-13" name="__codelineno-18-13"></a><span class="c1"># output：</span>
 <a id="__codelineno-18-14" name="__codelineno-18-14"></a><span class="c1"># 55</span>
 </code></pre></div>
-<h2 id="_11">迭代器</h2>
-<h2 id="_12">生成器</h2>
-<p><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /><a href="https://www.cnblogs.com/liangmingshen/p/9706181.html">生成器</a></p>
-<h2 id="_13">函数编程</h2>
-<p>lambda 表达式</p>
 <h3 id="_14">函数作为变量</h3>
 <h3 id="_15">函数作为参数</h3>
 <p>函数作为参数最典型的例子就是排序。如果你有一个列表，你想对它按照自己定义的方式排序。</p>
