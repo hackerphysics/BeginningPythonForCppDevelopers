@@ -536,8 +536,8 @@ if 1 in a:
 
 条件语句和循环控制语句比较基础，和C++中没有太大区别，可以直接参考以下链接：
 
-[条件语句](https://www.runoob.com/python/python-if-statement.html)
-[循环语句](https://www.runoob.com/python/python-loops.html)
+:link: [条件语句](https://www.runoob.com/python/python-if-statement.html)
+:link: [循环语句](https://www.runoob.com/python/python-loops.html)
 
 ```python
 num = 5     
