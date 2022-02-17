@@ -469,18 +469,27 @@ bool(0.0) # False
 bool("False") # True
 ```
 
+- 转成bytes
 
-|         | int            | float              | str                  | bool                 | complex                | bytes    |
-|---------|----------------|--------------------|----------------------|----------------------|------------------------|----------|
-| int     | ——             | float(1) > 1.0     | str(1) > "1"         | bool(1) > True       | complex(1) > 1+0j      | ——       |
-| float   | int(0.5) > 0   | ——                 | str(0.5) > "0.5"     | bool(0.5) > True     | complex(0.5) > 0.5+0j  | ——       |
-| str     | int("1") > 1   | float("0.5") > 0.5 | ——                   | bool("False") > True | complex("1+2j") > 1+2j | b"hello" |
-| bool    | int(False) > 0 | float(False) > 0.0 | str(False) > "False" | ——                   | complex(False) > 0j    | ——       |
-| complex | ——             | ——                 | str(1+2j) > "1+2j"   | bool(1+2j) > True    | ——                     | ——       |
-| bytes   | 同 str2int     | 同str2float        | ——                   | 同str2bool           | 同str2complex          | ——       |
+其中bytes类型可以被当作特殊字符串，在字符串前面加上 b 就代表bytes类型。想一想ASCII编码，每个字符就是一个byte，所以ASCII编码下bytes和str没有区别，但是非ASSCII编码下就不一样了，如果将汉字字符串转成bytes，则需要考虑编码方式，直接在前面加b会报错。
 
-其中bytes类型可以被当作字符串，只不过是字符串的另外一种表示方法。如果要将int或者float转换成bytes，则需要考虑到诸如字节数，大端或小端等细节，用到的场景比较少，在此就不做介绍了。
+```python
+a =  "深度学习".encode("utf-8")
+type(a) # bytes
 
+# bytes 转成字符串
+a.decode("utf-8")
+```
+
+如果要将int或者float转换成bytes，则需要考虑到诸如字节数，大端或小端等细节。
+
+```python
+b = 1
+a = b.to_bytes(2,"little")
+
+# 反向转换
+int.from_bytes(a, "little") # 1
+```
 
 ## 运算符和表达式
 
@@ -497,6 +506,8 @@ if (a == b) {
 if a == b:
     print("ok")
 ```
+
+分号是可选的，如果你不在一行内写多个语句，那么完全没有必要使用分号。
 
 运算符和表达式比较基础，可以直接参考： [https://www.runoob.com/python/python-operators.html](https://www.runoob.com/python/python-operators.html) 
 
@@ -528,6 +539,40 @@ if 1 in a:
 [条件语句](https://www.runoob.com/python/python-if-statement.html)
 [循环语句](https://www.runoob.com/python/python-loops.html)
 
+```python
+num = 5     
+if num == 3:            # 判断num的值
+    print 'boss'        
+elif num == 2:
+    print 'user'
+elif num == 1:
+    print 'worker'
+elif num < 0:           # 值小于零时输出
+    print 'error'
+else:
+    print 'roadman'     # 条件均不成立时输出
+```
+
+## 标准库/第三方库
+
+
+### sys
+
+### os
+
+### math
+
+### time/datetime
+
+### random
+
+### argparse
+
+### copy
+
+from copy import deepcopy
+
+
 ## IO和文件操作
 
 - 读文件
@@ -537,17 +582,12 @@ if 1 in a:
 
 
 - 读二进制文件
+- 
 
 - 写二进制文件
 
 
-## Python和System交互
-
-在Python里面你可以非常方便的和系统进行交互：
-
-
-
-## 标准库
+- 遍历文件每一行
 
 
 ## 语法糖
@@ -584,6 +624,23 @@ a = 1; b = 2; c = 3
 a,b,c = 1,2,3
 ```
 
+- zip 迭代
+
+如果你想迭代两个等长的数组，在C++中你需要一个索引，然后从两个数组分别取值，在python里面你也可以这做，也可以用zip函数。
+
+```python
+a = ["name","age"]
+b = ["wang",18]
+data = {}
+for i in range(len(a)):
+    data.update({a[i]:b[i]})
+# 更优雅的写法
+for x,y in zip(a,b):
+    data.update({x:y})
+```
+
+zip把两个列表压缩成一个列表，里面的每个元素是元组。
+
 - 列表推导式
 
 如果我们想把一个列表中的每个元素变成平方:
@@ -596,6 +653,9 @@ for x in a:
 
 # 更优雅的写法
 b = [x**2 for x in a]
+
+# 还可以加条件
+b = [x**2 for x in a if x > 0]
 ```
 
 > 如果你想直接对数组进行操作，请参照Numpy的部分。
@@ -614,7 +674,17 @@ b = {x for x in a}
 
 - 字典推导式
 
+```python
+a = ["name","age"]
+b = ["wang",18]
 
+data = {}
+for x,y in zip(a,b):
+    data.update({x:y})
+
+# 应用字典推导式，还可以更简便
+data = {x:y for x,y in zip(a,b)}
+```
 
 - 大于和小于
 
@@ -625,4 +695,22 @@ a = 3
 1 < a < 10 # True
 ```
 
+- with关键字
+
+在C++里，如果你要打开一个文件，你总要记得关闭。Python里面也有打开和关闭文件的操作，不过，利用with as关键字后，你可以不必手动关闭文件了。
+
+```python
+
+f = open("text.txt")
+for line in f.readlines():
+    print(line)
+f.close()
+
+# 更优雅的写法
+with open("text.txt") as f:
+    for line in f.readlines():
+        print(line)
+```
+
 :bulb: Python中还有很多很多的语法糖，这些语法糖能帮助我们把代码变得非常简单。
+
