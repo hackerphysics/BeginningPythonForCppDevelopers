@@ -329,7 +329,7 @@ a(math.pi)
 ```python
 # example 1
 sum = lambda x,y: x+y
-sum
+sum(1,2)
 
 # example 2
 import math
@@ -379,11 +379,13 @@ sorted(names, key=lambda x: -len(x)) #['zhang', 'wang', 'zhao', 'li']
 
 :star: *map*
 
+map操作就是对每个元素都应用一次函数，map会返回一个迭代器对象，可以用list将其转换成列表。
+
 ```python
-import functools
-
+names = ["zhang","wang","li", "zhao"]
+list(map(lambda x: x + "#", names))
+# ['zhang#', 'wang#', 'li#', 'zhao#']
 ```
-
 
 **作为函数返回值**
 
@@ -414,7 +416,7 @@ def add_N(n:int):
 
 add_N 内部的这个add函数，引用了它外部的变量（也就是add_N）的参数n。当我们把add这个函数返回的时候，它好像 **携带** 了n这个参数一样，在后面的使用中依然能正确使用它的值。
 
-我们指导函数都有自己的作用域，变量 n 在 add_N 这个函数的作用域之内，但是不在 add 这个函数的作用域内。但是当我们返回 add 这个函数的时候，它把其所引用的**父作用域**的变量也带上了，这就是闭包。
+我们知道函数都有自己的作用域，变量 n 在 add_N 这个函数的作用域之内，但是不在 add 这个函数的作用域内。但是当我们返回 add 这个函数的时候，它把其所引用的**父作用域**的变量也带上了，这就是闭包。
 
 ![20220219162209](http://haipeng-openwrite.oss-cn-beijing.aliyuncs.com/images%5C8bf8d73d04dfdc4873fb460a7d793822.png)
 
