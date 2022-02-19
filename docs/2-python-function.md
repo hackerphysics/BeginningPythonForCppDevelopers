@@ -259,55 +259,231 @@ linter 静态代码分析工具。可以帮助你检查潜在的错误。这样�
 
 ## 函数编程
 
+函数编程和面向过程编程、面向对象编程一样，都是一种编程范式，有的时候也可以理解为一种编程风格，它们并没有严格意义上的使用界限，在C++里我们写代码很多时候都是混合使用面向过程编程和面向对象编程两种风格。我们先来看一个函数编程的定义：
+
+> 函数编程使用函数作为代码的主要构建单元。和过程编程不一样，函数编程范式把函数当作对象来处理：可以被当作参数传递，可以在执行的过程中动态创建函数。
+> Functional programming (FP) uses functions as the main building blocks. Unlike procedural programming, the functional paradigm treats functions as objects that can be passed as parameters, allowing new functions to be built dynamically as the program executes.
+
+函数在任何编程语言里都支持，但并不是任何编程语言都适合函数编程。比如把函数本身当作参数（不是复杂的函数指针）和动态创建函数，这在C++中就无法实现。Python是支持函数编程的语言，函数在Python中就是对象，是**一等公民**。
+
+### 函数编程的特点
+
+**函数编程偏爱纯函数**
+
+并非说使用函数就算作函数式编程，函数编程喜欢用更接近数学上定义的纯粹的函数：接受输入，返回输出，多次重复调用返回的值完全唯一确定，并且不会有其他的附加影响。
+
+我们先举一个C++中函数的例子，
+
+```c++
+// C++
+int f(int *a, double b)
+{
+    // code
+    return 0;
+}
+```
+
+从功能上看，这是个比较简单的函数，但是因为传入了指针的缘故，调用完这个函数后你不确定 a 的值是否会被改变。这就是我们所说的附加影响：side effects。在数学中我们使用一个函数的时候，是不需要担心这些东西的。下面是一个纯函数的例子：
+
+```c++
+// C++
+int add(int a, int b)
+{
+    return a + b;
+}
+```
+
+**函数编程避免side effects**
+
+这条可以认为是上一条的推论。
+
+**函数编程偏爱不可变的对象**
+
+不可变的对象指那些创建之后就不允许被修改的对象，性质类似于常量。
+
+```python
+def sum(arr:list)->float:
+    s = 0
+    for x in arr:
+        s += x
+    return s
+```
+
+对列表求和。
 
 
-### 函数作为变量
+### 函数作为对象
 
-lambda 表达式
+函数作为**一等公民**，所有你对其他变量能操作的事情都可以对函数进行操作，比如：
+
+**赋值**
+
+```python
+import math
+a = math.sin
+a(math.pi)
+```
+
+**创建**
+
+在C++中我们必须要先定义一个函数才能够使用它，Python中你可以直接用lambda表达式创建函数：
+
+```python
+# example 1
+sum = lambda x,y: x+y
+sum
+
+# example 2
+import math
+sin2 = lambda x: math.sin(x)**2
+sin2(math.pi/3)
+```
+
+lambda表达式就是匿名函数，你可以把它赋值给任何变量，lambda表达式只能定义一行表达式能完成的函数，太复杂的函数还是得用 def 来定义。不过考虑到Python语言的简洁性，一行代码你能完成的事情也远远超过你现在的想象。
+
+**添加到列表**
+
+```python
+import math
+funcs = [math.sin, math.cos, math.tan]
+[print(f(0.5)) for f in funcs]
+```
+
+**作为函数参数**
+
+```python
+import math
+
+def abs_f(fun, x):
+    return abs(fun(x))
+    
+abs_f(math.sin, -0.5)
+```
+
+函数作为参数有几个比较常用的例子。
+
+
+:star: *排序*
+
+```python
+names = ["zhang","wang","li", "zhao"]
+
+# 默认排序
+sorted(names) # ['li', 'wang', 'zhang', 'zhao']
+
+# 自定义排序函数，这里用len函数
+sorted(names, key=len) # ['li', 'wang', 'zhao', 'zhang']
+
+# 用自己创建的函数
+sorted(names, key=lambda x: -len(x)) #['zhang', 'wang', 'zhao', 'li']
+
+```
+
+:star: *map*
+
+```python
+import functools
+
+```
+
+
+**作为函数返回值**
+
+```python
+def add_N(n:int):
+    def add(x):
+        return x + n
+    return add
+
+add_1 = add_N(1)
+add_1(1) # 2
+add_1(3) # 4
+
+add_1024 = add_N(1024)
+add_1024(3) # 1027
+```
+
+### 闭包
+
+闭包是个很有意思的概念，值得特殊讲一讲。 上面函数作为返回值的例子里其实就用到了闭包，我们重新再看一下这个函数：
+
+```python
+def add_N(n:int):
+    def add(x):
+        return x + n
+    return add
+```
+
+add_N 内部的这个add函数，引用了它外部的变量（也就是add_N）的参数n。当我们把add这个函数返回的时候，它好像 **携带** 了n这个参数一样，在后面的使用中依然能正确使用它的值。
+
+我们指导函数都有自己的作用域，变量 n 在 add_N 这个函数的作用域之内，但是不在 add 这个函数的作用域内。但是当我们返回 add 这个函数的时候，它把其所引用的**父作用域**的变量也带上了，这就是闭包。
+
+![20220219162209](http://haipeng-openwrite.oss-cn-beijing.aliyuncs.com/images%5C8bf8d73d04dfdc4873fb460a7d793822.png)
+
+:thinking: 关于这种作用域的性质，看起来有没有一点熟悉呢？想想在面向对象编程里面，一个对象有自己的作用域，对象内部的方法可以随便访问对象内部的属性。如果你把对象内的方法当作函数来看，你会发现对象属性也并不在函数的作用域内：
+
+![20220219162339](http://haipeng-openwrite.oss-cn-beijing.aliyuncs.com/images%5C8c3a218dd9742b677e3250e4825029a2.png)
+
+既然在Python中函数本身就是一种对象，那么闭包的支持也就变得不难理解了。并且闭包在某种程度上让函数替代了类的工作，这也正是函数编程范式所追求的：尽量使用函数，而不是类。
+
+利用闭包确实能做很多事情，下面有个小例子：
+
+```python
+def compose(f, g):
+    def fn(x):
+        return f(g(x))
+    return fn
+```
+
+这是生成复合函数的一个函数，如果你经常需要连续调用几个函数，那么不妨把他们组合起来，这样会让你的代码更简洁。
 
 ### 迭代器
 
+函数编程喜欢使用迭代器，迭代器的概念在C++中也有，但
+
 ### 生成器
+
+生成器
+
+```python
+
+def get_array():
+    l = [1,2,3,4]
+    return l # 一次返回所有元素
+
+for x in get_array():
+    print(x)
+
+def get_array():
+    l = [1,2,3,4]
+    for x in l:
+        yield x # 一次只返回一个元素
+
+for x in get_array(): # 迭代的时候与列表没有区别
+    print(x)
+
+```
+
+生成器和迭代器是一对兄弟，配合使用才最佳。
 
 :link:[生成器](https://www.cnblogs.com/liangmingshen/p/9706181.html)
 
 
-
 ### 递归
 
-支持递归是编程语言的基本要求，Python自然也不例外。我们尝试用递归计算斐波那契数列的第n项：
+函数编程中喜欢使用递归，因为它很多时候都会让代码更简洁。不过要注意递归的性能通常都比较低，要谨慎使用。Python中递归的最大深度不能超过1000，如果你想调高这个阈值，可以通过以下代码来设置：
 
 ```python
+sys.setrecursionlimit(10000)
+```
 
+**递归计算斐波那契数列**
+
+```python
 def fib(n):
-    if n < 1:
-        return None
-    if n == 1:
-        return 1
-    elif n == 2:
+    if n <= 2:
         return 1
     else:
         return fib(n-1) + fib(n-2)
-
-print(fib(10))
-
-# output：
-# 55
-
+fib(10) # 55
 ```
-
-### 函数作为参数
-
-函数作为参数最典型的例子就是排序。如果你有一个列表，你想对它按照自己定义的方式排序。
-
-```python
-sort
-```
-
-map
-
-reduce
-
-### 函数作为返回值
-
-### 闭包

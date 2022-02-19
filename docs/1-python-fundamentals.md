@@ -444,7 +444,7 @@ print(a) # [1, 2, 3]
 print(b) # [1, 2, 3, 4]
 ```
 
-## 类型转换
+### 类型转换
 
 类型之间的转换方法如下表：
 
@@ -517,7 +517,8 @@ int.from_bytes(a, "little") # 1
 
 ## 运算符和表达式
 
-运算符和表达式是基础内容，可参考以下链接： 
+运算符和表达式是基础内容，可参考以下链接：
+
 - :link: [Python 运算符](https://www.runoob.com/python/python-operators.html)
 
 绝大部分运算发符在C++之中都有对应，这里值得一提的是Python中的逻辑运算符直接使用： and、or、not，理解起来非常方便。
@@ -545,8 +546,8 @@ if 1 in a:
 
 条件语句和循环控制语句比较基础，和C++中没有太大区别，可以直接参考以下链接：
 
-:link: [条件语句](https://www.runoob.com/python/python-if-statement.html)
-:link: [循环语句](https://www.runoob.com/python/python-loops.html)
+- :link: [条件语句](https://www.runoob.com/python/python-if-statement.html)
+- :link: [循环语句](https://www.runoob.com/python/python-loops.html)
 
 下面给出一些代码示例。
 
