@@ -770,84 +770,74 @@ Functional programming (FP) uses functions as the main building blocks. Unlike p
 <a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
 <a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
-<p><strong>函数编程避免side effects</strong></p>
-<p>这条可以认为是上一条的推论。</p>
-<p><strong>函数编程偏爱不可变的对象</strong></p>
-<p>不可变的对象指那些创建之后就不允许被修改的对象，性质类似于常量。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">arr</span><span class="p">:</span><span class="nb">list</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">float</span><span class="p">:</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2"></a>    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3"></a>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
-<a id="__codelineno-20-4" name="__codelineno-20-4"></a>        <span class="n">s</span> <span class="o">+=</span> <span class="n">x</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5"></a>    <span class="k">return</span> <span class="n">s</span>
-</code></pre></div>
-<p>对列表求和。</p>
+<p>函数编程风格会尽量避免side effects，使用纯函数只是其中的一种，除此之外函数编程尽量使用不可变的对象，不可变的对象是指创造之后就不能被修改的对象，这就是list和tuple的区别。使用不可修改的对象也会避免导致side effects。</p>
 <h3 id="_12">函数作为对象</h3>
 <p>函数作为<strong>一等公民</strong>，所有你对其他变量能操作的事情都可以对函数进行操作，比如：</p>
 <p><strong>赋值</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="kn">import</span> <span class="nn">math</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="n">a</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span>
-<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="n">a</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="kn">import</span> <span class="nn">math</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="n">a</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="n">a</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
 </code></pre></div>
 <p><strong>创建</strong></p>
 <p>在C++中我们必须要先定义一个函数才能够使用它，Python中你可以直接用lambda表达式创建函数：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="c1"># example 1</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="nb">sum</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="nb">sum</span>
-<a id="__codelineno-22-4" name="__codelineno-22-4"></a>
-<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="c1"># example 2</span>
-<a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="kn">import</span> <span class="nn">math</span>
-<a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="n">sin2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-<a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="n">sin2</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="c1"># example 1</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="nb">sum</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="nb">sum</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="c1"># example 2</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="kn">import</span> <span class="nn">math</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="n">sin2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="n">sin2</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
 <p>lambda表达式就是匿名函数，你可以把它赋值给任何变量，lambda表达式只能定义一行表达式能完成的函数，太复杂的函数还是得用 def 来定义。不过考虑到Python语言的简洁性，一行代码你能完成的事情也远远超过你现在的想象。</p>
 <p><strong>添加到列表</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="kn">import</span> <span class="nn">math</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">]</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="kn">import</span> <span class="nn">math</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">]</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">]</span>
 </code></pre></div>
 <p><strong>作为函数参数</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="kn">import</span> <span class="nn">math</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2"></a>
-<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="k">def</span> <span class="nf">abs_f</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-<a id="__codelineno-24-4" name="__codelineno-24-4"></a>    <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">fun</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<a id="__codelineno-24-5" name="__codelineno-24-5"></a>
-<a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="n">abs_f</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="kn">import</span> <span class="nn">math</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="k">def</span> <span class="nf">abs_f</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a>    <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="n">fun</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="n">abs_f</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
 </code></pre></div>
 <p>函数作为参数有几个比较常用的例子。</p>
 <p><img alt="⭐" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2b50.svg" title=":star:" /> <em>排序</em></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;zhang&quot;</span><span class="p">,</span><span class="s2">&quot;wang&quot;</span><span class="p">,</span><span class="s2">&quot;li&quot;</span><span class="p">,</span> <span class="s2">&quot;zhao&quot;</span><span class="p">]</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2"></a>
-<a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="c1"># 默认排序</span>
-<a id="__codelineno-25-4" name="__codelineno-25-4"></a><span class="nb">sorted</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="c1"># [&#39;li&#39;, &#39;wang&#39;, &#39;zhang&#39;, &#39;zhao&#39;]</span>
-<a id="__codelineno-25-5" name="__codelineno-25-5"></a>
-<a id="__codelineno-25-6" name="__codelineno-25-6"></a><span class="c1"># 自定义排序函数，这里用len函数</span>
-<a id="__codelineno-25-7" name="__codelineno-25-7"></a><span class="nb">sorted</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span> <span class="c1"># [&#39;li&#39;, &#39;wang&#39;, &#39;zhao&#39;, &#39;zhang&#39;]</span>
-<a id="__codelineno-25-8" name="__codelineno-25-8"></a>
-<a id="__codelineno-25-9" name="__codelineno-25-9"></a><span class="c1"># 用自己创建的函数</span>
-<a id="__codelineno-25-10" name="__codelineno-25-10"></a><span class="nb">sorted</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1">#[&#39;zhang&#39;, &#39;wang&#39;, &#39;zhao&#39;, &#39;li&#39;]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;zhang&quot;</span><span class="p">,</span><span class="s2">&quot;wang&quot;</span><span class="p">,</span><span class="s2">&quot;li&quot;</span><span class="p">,</span> <span class="s2">&quot;zhao&quot;</span><span class="p">]</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="c1"># 默认排序</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="nb">sorted</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="c1"># [&#39;li&#39;, &#39;wang&#39;, &#39;zhang&#39;, &#39;zhao&#39;]</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a>
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="c1"># 自定义排序函数，这里用len函数</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="nb">sorted</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span> <span class="c1"># [&#39;li&#39;, &#39;wang&#39;, &#39;zhao&#39;, &#39;zhang&#39;]</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8"></a>
+<a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="c1"># 用自己创建的函数</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="nb">sorted</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="c1">#[&#39;zhang&#39;, &#39;wang&#39;, &#39;zhao&#39;, &#39;li&#39;]</span>
 </code></pre></div>
 <p><img alt="⭐" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2b50.svg" title=":star:" /> <em>map</em></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="kn">import</span> <span class="nn">functools</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="kn">import</span> <span class="nn">functools</span>
 </code></pre></div>
 <p><strong>作为函数返回值</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="k">def</span> <span class="nf">add_N</span><span class="p">(</span><span class="n">n</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a>        <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">n</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a>    <span class="k">return</span> <span class="n">add</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5"></a>
+<a id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="n">add_1</span> <span class="o">=</span> <span class="n">add_N</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="n">add_1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 2</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8"></a><span class="n">add_1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># 4</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9"></a>
+<a id="__codelineno-26-10" name="__codelineno-26-10"></a><span class="n">add_1024</span> <span class="o">=</span> <span class="n">add_N</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+<a id="__codelineno-26-11" name="__codelineno-26-11"></a><span class="n">add_1024</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># 1027</span>
+</code></pre></div>
+<h3 id="_13">闭包</h3>
+<p>闭包是个很有意思的概念，值得特殊讲一讲。 上面函数作为返回值的例子里其实就用到了闭包，我们重新再看一下这个函数：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="k">def</span> <span class="nf">add_N</span><span class="p">(</span><span class="n">n</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
 <a id="__codelineno-27-2" name="__codelineno-27-2"></a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <a id="__codelineno-27-3" name="__codelineno-27-3"></a>        <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">n</span>
 <a id="__codelineno-27-4" name="__codelineno-27-4"></a>    <span class="k">return</span> <span class="n">add</span>
-<a id="__codelineno-27-5" name="__codelineno-27-5"></a>
-<a id="__codelineno-27-6" name="__codelineno-27-6"></a><span class="n">add_1</span> <span class="o">=</span> <span class="n">add_N</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-27-7" name="__codelineno-27-7"></a><span class="n">add_1</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 2</span>
-<a id="__codelineno-27-8" name="__codelineno-27-8"></a><span class="n">add_1</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># 4</span>
-<a id="__codelineno-27-9" name="__codelineno-27-9"></a>
-<a id="__codelineno-27-10" name="__codelineno-27-10"></a><span class="n">add_1024</span> <span class="o">=</span> <span class="n">add_N</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
-<a id="__codelineno-27-11" name="__codelineno-27-11"></a><span class="n">add_1024</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># 1027</span>
-</code></pre></div>
-<h3 id="_13">闭包</h3>
-<p>闭包是个很有意思的概念，值得特殊讲一讲。 上面函数作为返回值的例子里其实就用到了闭包，我们重新再看一下这个函数：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="k">def</span> <span class="nf">add_N</span><span class="p">(</span><span class="n">n</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
-<a id="__codelineno-28-2" name="__codelineno-28-2"></a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<a id="__codelineno-28-3" name="__codelineno-28-3"></a>        <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">n</span>
-<a id="__codelineno-28-4" name="__codelineno-28-4"></a>    <span class="k">return</span> <span class="n">add</span>
 </code></pre></div>
 <p>add_N 内部的这个add函数，引用了它外部的变量（也就是add_N）的参数n。当我们把add这个函数返回的时候，它好像 <strong>携带</strong> 了n这个参数一样，在后面的使用中依然能正确使用它的值。</p>
 <p>我们指导函数都有自己的作用域，变量 n 在 add_N 这个函数的作用域之内，但是不在 add 这个函数的作用域内。但是当我们返回 add 这个函数的时候，它把其所引用的<strong>父作用域</strong>的变量也带上了，这就是闭包。</p>
@@ -856,10 +846,10 @@ Functional programming (FP) uses functions as the main building blocks. Unlike p
 <p><img alt="20220219162339" src="http://haipeng-openwrite.oss-cn-beijing.aliyuncs.com/images%5C8c3a218dd9742b677e3250e4825029a2.png" /></p>
 <p>既然在Python中函数本身就是一种对象，那么闭包的支持也就变得不难理解了。并且闭包在某种程度上让函数替代了类的工作，这也正是函数编程范式所追求的：尽量使用函数，而不是类。</p>
 <p>利用闭包确实能做很多事情，下面有个小例子：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
-<a id="__codelineno-29-2" name="__codelineno-29-2"></a>    <span class="k">def</span> <span class="nf">fn</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<a id="__codelineno-29-3" name="__codelineno-29-3"></a>        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<a id="__codelineno-29-4" name="__codelineno-29-4"></a>    <span class="k">return</span> <span class="n">fn</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a>    <span class="k">def</span> <span class="nf">fn</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a>        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a>    <span class="k">return</span> <span class="n">fn</span>
 </code></pre></div>
 <p>这是生成复合函数的一个函数，如果你经常需要连续调用几个函数，那么不妨把他们组合起来，这样会让你的代码更简洁。</p>
 <h3 id="_14">迭代器</h3>
@@ -876,35 +866,35 @@ Functional programming (FP) uses functions as the main building blocks. Unlike p
 <li>一次只加载一个对象到内存，处理完后再加载下一个</li>
 </ul>
 <p>很显然，第二种更加节省内存资源，是一种“懒加载”的方式——只有当需要的时候才加载数据。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="k">def</span> <span class="nf">get_array</span><span class="p">():</span>
-<a id="__codelineno-30-2" name="__codelineno-30-2"></a>    <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
-<a id="__codelineno-30-3" name="__codelineno-30-3"></a>    <span class="k">return</span> <span class="n">arr</span> <span class="c1"># 一次返回所有元素</span>
-<a id="__codelineno-30-4" name="__codelineno-30-4"></a>
-<a id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">get_array</span><span class="p">():</span>
-<a id="__codelineno-30-6" name="__codelineno-30-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<a id="__codelineno-30-7" name="__codelineno-30-7"></a>
-<a id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="k">def</span> <span class="nf">get_array</span><span class="p">():</span>
-<a id="__codelineno-30-9" name="__codelineno-30-9"></a>    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-30-10" name="__codelineno-30-10"></a>    <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-<a id="__codelineno-30-11" name="__codelineno-30-11"></a>        <span class="k">yield</span> <span class="n">n</span>
-<a id="__codelineno-30-12" name="__codelineno-30-12"></a>        <span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
-<a id="__codelineno-30-13" name="__codelineno-30-13"></a>
-<a id="__codelineno-30-14" name="__codelineno-30-14"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">get_array</span><span class="p">():</span>
-<a id="__codelineno-30-15" name="__codelineno-30-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="k">def</span> <span class="nf">get_array</span><span class="p">():</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a>    <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3"></a>    <span class="k">return</span> <span class="n">arr</span> <span class="c1"># 一次返回所有元素</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4"></a>
+<a id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">get_array</span><span class="p">():</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7"></a>
+<a id="__codelineno-29-8" name="__codelineno-29-8"></a><span class="k">def</span> <span class="nf">get_array</span><span class="p">():</span>
+<a id="__codelineno-29-9" name="__codelineno-29-9"></a>    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-29-10" name="__codelineno-29-10"></a>    <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+<a id="__codelineno-29-11" name="__codelineno-29-11"></a>        <span class="k">yield</span> <span class="n">n</span>
+<a id="__codelineno-29-12" name="__codelineno-29-12"></a>        <span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
+<a id="__codelineno-29-13" name="__codelineno-29-13"></a>
+<a id="__codelineno-29-14" name="__codelineno-29-14"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">get_array</span><span class="p">():</span>
+<a id="__codelineno-29-15" name="__codelineno-29-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </code></pre></div>
 <p>yield 关键字的作用类似return。区别是return之后整个函数就运行结束了，但是yield之后函数并没有结束，还会继续挂起，当你再次调用的时候会再yield下一个值。</p>
 <p><img alt="🔗" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f517.svg" title=":link:" /><a href="https://www.cnblogs.com/liangmingshen/p/9706181.html">生成器</a></p>
 <h3 id="_16">递归</h3>
 <p>函数编程中喜欢使用递归，因为它很多时候都会让代码更简洁。不过要注意递归的性能通常都比较低，要谨慎使用。Python中递归的最大深度不能超过1000，如果你想调高这个阈值，可以通过以下代码来设置：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="n">sys</span><span class="o">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="n">sys</span><span class="o">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
 </code></pre></div>
 <p><strong>递归计算斐波那契数列</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<a id="__codelineno-32-2" name="__codelineno-32-2"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
-<a id="__codelineno-32-3" name="__codelineno-32-3"></a>        <span class="k">return</span> <span class="mi">1</span>
-<a id="__codelineno-32-4" name="__codelineno-32-4"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-32-5" name="__codelineno-32-5"></a>        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-32-6" name="__codelineno-32-6"></a><span class="n">fib</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># 55</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5"></a>        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6"></a><span class="n">fib</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># 55</span>
 </code></pre></div>
 
               
