@@ -5,6 +5,7 @@ theme:
     name: material
     logo: images/python.png
     favicon: images/python.png
+    language: 'zh'
     features:
       - navigation.expand
       - navigation.top
