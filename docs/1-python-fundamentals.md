@@ -904,6 +904,14 @@ for x,y in zip(a,b):
 
 zip把两个列表压缩成一个列表，里面的每个元素是元组。
 
+- enumerate 迭代
+
+```python
+a = ["name","age"]
+for i,x in enumerate(a): # 遍历列表的时候同时获取索引
+    print(i,x)
+```
+  
 - 列表推导式
 
 如果我们想把一个列表中的每个元素变成平方:

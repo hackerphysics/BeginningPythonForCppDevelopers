@@ -23,6 +23,9 @@ nav:
     - '科学计算': '5-python-numpy.md'
     - '实战': '6-python-applications.md'
 
+plugins:
+    # - with-pdf
+
 markdown_extensions:
   - pymdownx.caret
   - pymdownx.mark
